@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 # ComprehensivePipelineUtils
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/Luolattee26/ComprehensivePipelineUtils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Luolattee26/ComprehensivePipelineUtils/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/Luolattee26/ComprehensivePipelineUtils/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Luolattee26/ComprehensivePipelineUtils?branch=main)
 <!-- badges: end -->
 
 The goal of ComprehensivePipelineUtils is to package some useful code tools

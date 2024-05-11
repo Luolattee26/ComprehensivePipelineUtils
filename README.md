@@ -4,6 +4,10 @@
 # ComprehensivePipelineUtils
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/Luolattee26/ComprehensivePipelineUtils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Luolattee26/ComprehensivePipelineUtils/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/Luolattee26/ComprehensivePipelineUtils/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Luolattee26/ComprehensivePipelineUtils?branch=main)
 <!-- badges: end -->
 
 The goal of ComprehensivePipelineUtils is to package some useful code
@@ -25,6 +29,17 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(ComprehensivePipelineUtils)
+#> 载入需要的程辑包：tidyverse
+#> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.4     ✔ readr     2.1.5
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.1
+#> ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+#> ✔ purrr     1.0.2     
+#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+#> ✖ dplyr::filter() masks stats::filter()
+#> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ## basic example code
 ```
 
