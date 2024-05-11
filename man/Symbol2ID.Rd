@@ -17,5 +17,5 @@ return gene ensembel ID form gene symbol based genecode V22 annotation
 }
 \examples{
 library(ComprehensivePipelineUtils)
-Symbol2ID(c('H19', 'HOTAIR'))
+Symbol2ID(c("H19", "HOTAIR"))
 }

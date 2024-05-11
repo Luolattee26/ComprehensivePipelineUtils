@@ -1,19 +1,19 @@
 Package: ComprehensivePipelineUtils
-Title: What the Package Does (One Line, Title Case)
+Title: CPU--comprehensive bioinfo-analysis pipeline utils package
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Cal", "Luo", "carl614317043@gmail.com", role = c("aut", "cre"),
+           comment = c(Web = "https://github.com/Luolattee26"))
+Description: To wrap some useful code tools
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
 Suggests: 
     lintr,
     renv,
-    styler
+    styler,
+    testthat (>= 3.0.0)
 Imports: 
     dplyr,
     magrittr,
@@ -23,3 +23,4 @@ Depends:
     R (>= 2.10),
     tidyverse
 LazyData: true
+Config/testthat/edition: 3

@@ -17,5 +17,5 @@ return gene symbol form gene ensembel ID based genecode V22 annotation
 }
 \examples{
 library(ComprehensivePipelineUtils)
-ID_2_Symbol(c('ENSG00000162444', 'ENSG00000130939'))
+ID_2_Symbol(c("ENSG00000162444", "ENSG00000130939"))
 }
