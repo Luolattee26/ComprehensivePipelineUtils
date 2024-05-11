@@ -1,9 +1,11 @@
 Package: ComprehensivePipelineUtils
 Title: CPU--comprehensive bioinfo-analysis pipeline utils package
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
-    person("Cal", "Luo", "carl614317043@gmail.com", role = c("aut", "cre"),
-           comment = c(Web = "https://github.com/Luolattee26"))
+    person(given = 'Cal',
+    family = 'Luo',
+    role = c("aut", "cre"),
+    email = "carl614317043@gmail.com")
 Description: To wrap some useful code tools
 License: MIT + file LICENSE
 Encoding: UTF-8
