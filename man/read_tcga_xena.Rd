@@ -8,7 +8,8 @@ read_tcga_xena(
   folder_path,
   file_pattern = "*.tsv",
   use_all_cores = FALSE,
-  cores = 4
+  cores = 4,
+  add_file_info = FALSE
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ read_tcga_xena(
 \item{use_all_cores}{whether use full cores}
 
 \item{cores}{cores number to use}
+
+\item{add_file_info}{whether add file info to res_list}
 }
 \value{
 list of data and file path
