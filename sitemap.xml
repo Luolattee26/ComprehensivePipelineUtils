@@ -22,6 +22,9 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
+    <loc>/reference/ComprehensivePipelineUtils-package.html</loc>
+  </url>
+  <url>
     <loc>/reference/id_to_symbol.html</loc>
   </url>
   <url>
@@ -29,6 +32,9 @@
   </url>
   <url>
     <loc>/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>/reference/read_tcga_xena.html</loc>
   </url>
   <url>
     <loc>/reference/symbol_to_id.html</loc>
