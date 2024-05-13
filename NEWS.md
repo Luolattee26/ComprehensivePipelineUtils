@@ -4,3 +4,4 @@
 * Added a `NEWS.md` file to track changes to the package.
 - Add a new function `read_tcga_xena`.
 * fix bugs
+- Add a new function `tcga_sample_filter`.
