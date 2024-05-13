@@ -17,7 +17,10 @@ Suggests:
     styler,
     testthat (>= 3.0.0)
 Imports: 
-    magrittr
+    doParallel,
+    foreach,
+    magrittr,
+    utils
 Depends: 
     R (>= 2.10)
 LazyData: true
