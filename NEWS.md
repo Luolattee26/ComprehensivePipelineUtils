@@ -6,3 +6,4 @@
 * fix bugs
 - Add a new function `tcga_sample_filter`.
 - Add a new function `corr_rank`
+- Add a new function `deg_corr_selection`

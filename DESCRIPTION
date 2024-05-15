@@ -20,6 +20,7 @@ Imports:
     doParallel,
     foreach,
     magrittr,
+    RobustRankAggreg,
     stats,
     utils
 Depends: 
