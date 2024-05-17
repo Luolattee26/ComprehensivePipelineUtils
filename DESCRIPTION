@@ -17,6 +17,7 @@ Suggests:
     styler,
     testthat (>= 3.0.0)
 Imports: 
+    data.table,
     doParallel,
     foreach,
     magrittr,

@@ -35,7 +35,7 @@ read_tcga_xena <- function(folder_path, file_pattern = "*.tsv",
       utils::setTxtProgressBar(pb, i)
       list(
         file = files[i],
-        data = read.table(files[i],
+        data = data.table::fread(files[i],
           header = TRUE,
           sep = "\t", check.names = FALSE
         )
@@ -47,7 +47,7 @@ read_tcga_xena <- function(folder_path, file_pattern = "*.tsv",
       i = seq_along(i)
     ) %dopar% {
       utils::setTxtProgressBar(pb, i)
-      read.table(files[i],
+      data.table::fread(files[i],
         header = TRUE,
         sep = "\t", check.names = FALSE
       )
@@ -58,5 +58,6 @@ read_tcga_xena <- function(folder_path, file_pattern = "*.tsv",
   close(pb)
 
   names(result) <- file_names
+  gc()
   return(result)
 }
