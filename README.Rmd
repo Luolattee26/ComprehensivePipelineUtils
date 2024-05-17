@@ -17,10 +17,12 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/Luolattee26/ComprehensivePipelineUtils/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Luolattee26/ComprehensivePipelineUtils/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/Luolattee26/ComprehensivePipelineUtils/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Luolattee26/ComprehensivePipelineUtils?branch=main)
 <!-- badges: end -->
 
-The goal of ComprehensivePipelineUtils is to package some useful code tools
+The goal of ComprehensivePipelineUtils is to package some useful code tools.
+
+* The name of this tool is a result of my personal indulgence.
+* Please don't mind it :D
 
 ## Installation
 
@@ -33,28 +35,36 @@ devtools::install_github("Luolattee26/ComprehensivePipelineUtils")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example how to use CPU_toolkit(ComprehensivePipelineUtils):
 
 ```{r example}
 library(ComprehensivePipelineUtils)
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
+```r
+tcga.data <- read_tcga_xena(folder_path = 'path/to/xena_data',
+                            file_pattern = '*.tsv',
+                            use_all_cores = TRUE)
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+* This function `read_tcga_xena` will return a list of data (tcga.data).
+* The names(tcga.data) will in the pattern `TCGA-XXXX`.
+* Each element in the list is a dataframe.
+* Each column in the dataframe is a case sample and each row is a mRNA (feature).
+* It is recommended that users use all CPUs to improve performance.
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
+```r
+tumor.data <- tcga_sample_filter(tcga.data)[["tumor"]]
+tumor.data <- fpkm_to_tpm(
+  data_list = tumor.data,
+  is_logged = TRUE,
+  get_logged = TRUE
+)
 ```
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+* You can use the data get from function `read_tcga_xena` to get tumor data.
+* And change it into `tpm` or `log2(tpm + 1)`.
 
 ## Code of Conduct
   
