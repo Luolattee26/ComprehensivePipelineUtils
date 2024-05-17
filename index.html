@@ -58,7 +58,11 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of ComprehensivePipelineUtils is to package some useful code tools</p>
+<p>The goal of ComprehensivePipelineUtils is to package some useful code tools.</p>
+<ul>
+<li>The name of this tool is a result of my personal indulgence.</li>
+<li>Please don’t mind it :D</li>
+</ul>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -70,24 +74,32 @@
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
+<p>This is a basic example how to use CPU_toolkit(ComprehensivePipelineUtils):</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">ComprehensivePipelineUtils</span><span class="op">)</span></span>
 <span><span class="co">## basic example code</span></span></code></pre></div>
-<p>What is special about using <code>README.Rmd</code> instead of just <code>README.md</code>? You can include R chunks like so:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span>
-<span><span class="co">#&gt;      speed           dist       </span></span>
-<span><span class="co">#&gt;  Min.   : 4.0   Min.   :  2.00  </span></span>
-<span><span class="co">#&gt;  1st Qu.:12.0   1st Qu.: 26.00  </span></span>
-<span><span class="co">#&gt;  Median :15.0   Median : 36.00  </span></span>
-<span><span class="co">#&gt;  Mean   :15.4   Mean   : 42.98  </span></span>
-<span><span class="co">#&gt;  3rd Qu.:19.0   3rd Qu.: 56.00  </span></span>
-<span><span class="co">#&gt;  Max.   :25.0   Max.   :120.00</span></span></code></pre></div>
-<p>You’ll still need to render <code>README.Rmd</code> regularly, to keep <code>README.md</code> up-to-date. <code>devtools::build_readme()</code> is handy for this.</p>
-<p>You can also embed plots, for example:</p>
-<p><img src="reference/figures/README-pressure-1.png" width="100%"></p>
-<p>In that case, don’t forget to commit and push the resulting figure files, so they display on GitHub and CRAN.</p>
+<code class="sourceCode R"><span><span class="va">tcga.data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_tcga_xena.html">read_tcga_xena</a></span><span class="op">(</span>folder_path <span class="op">=</span> <span class="st">'path/to/xena_data'</span>,</span>
+<span>                            file_pattern <span class="op">=</span> <span class="st">'*.tsv'</span>,</span>
+<span>                            use_all_cores <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>This function <code>read_tcga_xena</code> will return a list of data (tcga.data).</li>
+<li>The names(tcga.data) will in the pattern <code>TCGA-XXXX</code>.</li>
+<li>Each element in the list is a dataframe.</li>
+<li>Each column in the dataframe is a case sample and each row is a mRNA (feature).</li>
+<li>It is recommended that users use all CPUs to improve performance.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tumor.data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/tcga_sample_filter.html">tcga_sample_filter</a></span><span class="op">(</span><span class="va">tcga.data</span><span class="op">)</span><span class="op">[[</span><span class="st">"tumor"</span><span class="op">]</span><span class="op">]</span></span>
+<span><span class="va">tumor.data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/fpkm_to_tpm.html">fpkm_to_tpm</a></span><span class="op">(</span></span>
+<span>  data_list <span class="op">=</span> <span class="va">tumor.data</span>,</span>
+<span>  is_logged <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  get_logged <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>You can use the data get from function <code>read_tcga_xena</code> to get tumor data.</li>
+<li>And change it into <code>tpm</code> or <code>log2(tpm + 1)</code>.</li>
+</ul>
 </div>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
@@ -128,7 +140,6 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/Luolattee26/ComprehensivePipelineUtils/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/Luolattee26/ComprehensivePipelineUtils/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-<li><a href="https://app.codecov.io/gh/Luolattee26/ComprehensivePipelineUtils?branch=main" class="external-link"><img src="https://codecov.io/gh/Luolattee26/ComprehensivePipelineUtils/branch/main/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
