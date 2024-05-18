@@ -19,8 +19,6 @@ read_tcga_xena <- function(folder_path, file_pattern = "*.tsv",
     strsplit(x, "\\.")[[1]][1]
   })
 
-  pb <- utils::txtProgressBar(min = 0, max = length(files), style = 3)
-
   if (use_all_cores) {
     doParallel::registerDoParallel(cores = parallel::detectCores())
   } else {
@@ -32,7 +30,6 @@ read_tcga_xena <- function(folder_path, file_pattern = "*.tsv",
     result <- foreach::foreach(
       i = seq_along(i)
     ) %dopar% {
-      utils::setTxtProgressBar(pb, i)
       list(
         file = files[i],
         data = data.table::fread(files[i],
@@ -46,16 +43,12 @@ read_tcga_xena <- function(folder_path, file_pattern = "*.tsv",
     result <- foreach::foreach(
       i = seq_along(i)
     ) %dopar% {
-      utils::setTxtProgressBar(pb, i)
       data.table::fread(files[i],
         header = TRUE,
         sep = "\t", check.names = FALSE
       )
     }
   }
-
-
-  close(pb)
 
   names(result) <- file_names
   gc()
