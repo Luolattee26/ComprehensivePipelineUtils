@@ -1,8 +1,8 @@
 #' To calculate corr.coef between 2 feature lists
 #'
 #' @param data_list data list of sample-feature
-#' @param a_list feature list 1
-#' @param b_list feature list 2
+#' @param a_list feature list 1 (in Ensemble ID)
+#' @param b_list feature list 2 (in Ensemble ID)
 #' @param method method used to get corr.coef (pearson or spearman)
 #' @param adj_method method to adjust p-value
 #'
@@ -32,10 +32,11 @@ corr_rank <- function(data_list, a_list, b_list,
     )
 
     # for loop to calculation
-    for (feature_a in a_list) {
-      for (feature_b in b_list) {
-        test <- stats::cor.test(as.numeric(tmp_data[feature_a, ]),
-          as.numeric(tmp_data[feature_b, ]),
+    lapply(a_list, function(feature_a) {
+      data_a <- as.numeric(tmp_data[feature_a, ])
+      lapply(b_list, function(feature_b) {
+        data_b <- as.numeric(tmp_data[feature_b, ])
+        test <- stats::cor.test(data_a, data_b,
           method = method
         )
         df_result <- rbind(df_result, data.frame(
@@ -45,8 +46,8 @@ corr_rank <- function(data_list, a_list, b_list,
           p_value = test$p.value,
           stringsAsFactors = FALSE
         ))
-      }
-    }
+      })
+    })
 
     # pvalue adjustment
     df_result$p_value <- stats::p.adjust(df_result$p_value, method = adj_method)

@@ -9,9 +9,9 @@ corr_rank(data_list, a_list, b_list, method = "pearson", adj_method = "BH")
 \arguments{
 \item{data_list}{data list of sample-feature}
 
-\item{a_list}{feature list 1}
+\item{a_list}{feature list 1 (in Ensemble ID)}
 
-\item{b_list}{feature list 2}
+\item{b_list}{feature list 2 (in Ensemble ID)}
 
 \item{method}{method used to get corr.coef (pearson or spearman)}
 
