@@ -60,6 +60,16 @@ tumor.data <- fpkm_to_tpm(
   data.
 - And change it into `tpm` or `log2(tpm + 1)`.
 
+``` r
+get_colors(colors_number = 5, random_seed = 2028)
+#> [1] "#40E0D0" "#20B2AA" "#808000" "#FFFF00" "#E9967A"
+## get some colors from database
+```
+
+- In the example above, in the case when you want to get some colors.
+- You can use `get_colors`.
+- And you can also set a custom color list.
+
 ## Code of Conduct
 
 Please note that the ComprehensivePipelineUtils project is released with

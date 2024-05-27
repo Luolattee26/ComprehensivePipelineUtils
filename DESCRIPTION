@@ -20,9 +20,9 @@ Imports:
     data.table,
     doParallel,
     foreach,
+    Hmisc,
     magrittr,
     RobustRankAggreg,
-    stats,
     utils
 Depends: 
     R (>= 2.10)
