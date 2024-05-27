@@ -32,7 +32,8 @@ get_colors <- function(colors_number, random_seed = 2028,
     stop("Number of colors u want is larger than colors in database!")
   }
   colors_got <- sample(allcolour,
-                       colors_number,
-                       replace = FALSE)
+    colors_number,
+    replace = FALSE
+  )
   return(colors_got)
 }

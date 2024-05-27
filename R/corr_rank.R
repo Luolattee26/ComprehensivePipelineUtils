@@ -34,13 +34,13 @@ corr_rank <- function(data_list, a_list, b_list,
     # use Hmisc::rcorr to calculate correlation
     feature_list_mixed <- c(unlist(a_list), unlist(b_list))
     data_mat <- t(as.matrix(tmp_data[feature_list_mixed, ]))
-    cor_res <- Hmisc::rcorr(data_mat, method)
+    cor_res <- Hmisc::rcorr(data_mat, type = method)
     cor_mat <- as.data.frame(cor_res$r)
     p_mat <- as.data.frame(cor_res$P)
 
     # for loop to summarize the result
-    lapply(a_list, function(feature_a) {
-      lapply(b_list, function(feature_b) {
+    for (feature_a in a_list) {
+      for (feature_b in b_list) {
         df_result <- rbind(df_result, data.frame(
           feature_a = feature_a,
           feature_b = feature_b,
@@ -48,8 +48,8 @@ corr_rank <- function(data_list, a_list, b_list,
           p_value = p_mat[feature_a, feature_b],
           stringsAsFactors = FALSE
         ))
-      })
-    })
+      }
+    }
 
     # pvalue adjustment
     df_result$p_value <- stats::p.adjust(df_result$p_value, method = adj_method)
