@@ -33,6 +33,6 @@ get_colors <- function(colors_number, random_seed = 2028,
   }
   colors_got <- sample(allcolour,
                        colors_number,
-                       replace = F)
+                       replace = FALSE)
   return(colors_got)
 }
