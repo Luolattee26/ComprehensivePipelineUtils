@@ -2,7 +2,7 @@
 % Please edit documentation in R/symbol_to_id.R
 \name{symbol_to_id}
 \alias{symbol_to_id}
-\title{return gene ensembel ID form gene symbol based genecode V22 annotation}
+\title{return gene ensembl ID form gene symbol based genecode V22 annotation}
 \usage{
 symbol_to_id(symbol_list)
 }
@@ -10,10 +10,10 @@ symbol_to_id(symbol_list)
 \item{symbol_list}{gene symbol list}
 }
 \value{
-Ensemble gene IDs
+ensembl gene IDs
 }
 \description{
-return gene ensembel ID form gene symbol based genecode V22 annotation
+return gene ensembl ID form gene symbol based genecode V22 annotation
 }
 \examples{
 library(ComprehensivePipelineUtils)

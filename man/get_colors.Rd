@@ -20,6 +20,5 @@ colors_got
 get N colors from a certain color list
 }
 \examples{
-get_colors(5)
-c("#40E0D0", "#20B2AA", "#808000", "#FFFF00", "#E9967A")
+get_colors(colors_number = 5, random_seed = 2028, custom_colors = NULL)
 }

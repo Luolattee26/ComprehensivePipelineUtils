@@ -2,18 +2,18 @@
 % Please edit documentation in R/id_to_symbol.R
 \name{id_to_symbol}
 \alias{id_to_symbol}
-\title{return gene symbol form gene ensembel ID based genecode V22 annotation}
+\title{return gene symbol form gene ensembl ID based genecode V22 annotation}
 \usage{
 id_to_symbol(id_list)
 }
 \arguments{
-\item{id_list}{gene ensemble id list}
+\item{id_list}{gene ensembl id list}
 }
 \value{
 Symbol of genes
 }
 \description{
-return gene symbol form gene ensembel ID based genecode V22 annotation
+return gene symbol form gene ensembl ID based genecode V22 annotation
 }
 \examples{
 library(ComprehensivePipelineUtils)
